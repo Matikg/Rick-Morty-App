@@ -9,12 +9,15 @@ import Foundation
 
 class ApiService {
     private let baseURL = "https://rickandmortyapi.com/api"
-    
+    var page = 0
     
     
     func fetchCharacters() async throws -> CharacterResponse {
         do {
-            guard let url = URL(string: "\(baseURL)/character") else { throw ApiError.invalidURL }
+            if page < 42 {
+                page += 1
+            }
+            guard let url = URL(string: "\(baseURL)/character/?page=\(page)") else { throw ApiError.invalidURL }
             let (data, response) = try await URLSession.shared.data(from: url)
             guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw ApiError.serverError }
             let decoder = JSONDecoder()

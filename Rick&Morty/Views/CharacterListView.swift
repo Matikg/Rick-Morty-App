@@ -18,11 +18,20 @@ struct CharacterListView: View {
                 LazyVStack(alignment: .leading) {
                     ForEach(model.characters) { character in
                         CharacterRowView(character: character)
+                            .task {
+                                if character.id == model.characters.last?.id {
+                                    await model.getCharacters()
+                                }
+                            }
+                        Divider()
                     }
                 }
                 .padding()
             }
             .navigationTitle("Characters")
+            .refreshable {
+                await model.handleRefresh()
+            }
         }
         .task {
             await model.getCharacters()

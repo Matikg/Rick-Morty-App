@@ -15,6 +15,18 @@ class ContentModel: ObservableObject {
     
     func getCharacters() async {
         do {
+            let characterResponse = try await service.fetchCharacters()
+            self.characters.append(contentsOf: characterResponse.results)
+        }
+        catch {
+            print(error)
+        }
+    }
+    
+    func handleRefresh() async {
+        do {
+            characters.removeAll()
+            service.page = 0
             self.characters = try await service.fetchCharacters().results
         }
         catch {

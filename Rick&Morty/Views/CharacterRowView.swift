@@ -36,13 +36,17 @@ struct CharacterRowView: View {
             .shadow(radius: 10)
             
             VStack(alignment: .leading) {
+                Text(String(character.id))
                 Text(character.name ?? "")
                     .bold()
+                    .font(.title2)
+                
                 HStack {
                     Circle()
                         .fill(statusColor)
                         .frame(width: 10, height: 10)
-                    Text(character.status?.rawValue.capitalized ?? "")
+                    Text("\(character.status?.rawValue.capitalized ?? "") - \(character.species ?? "")")
+                        .font(.title3)
                 }
             }
             .padding(.horizontal)
