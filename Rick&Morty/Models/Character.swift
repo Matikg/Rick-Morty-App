@@ -10,12 +10,12 @@ import Foundation
 struct Character: Decodable, Identifiable {
     var id: Int
     var name: String?
-    var status: characterStatus?
+    var status: CharacterStatus?
     var species: String?
     var type: String?
-    var gender: characterGender?
-    var origin: Location?
-    var location: Location?
+    var gender: CharacterGender?
+    var origin: CharLocation?
+    var location: CharLocation?
     var image: String?
     var episode: [String]?
     var url: String?
@@ -33,14 +33,18 @@ struct CharacterInfo: Decodable {
     var next: String?
     var prev: String?
 }
+struct CharLocation: Decodable {
+    var name: String?
+    var url: String?
+}
 
-enum characterStatus: String, Decodable {
+enum CharacterStatus: String, Decodable {
     case Alive
     case Dead
     case unknown
 }
 
-enum characterGender: String, Decodable {
+enum CharacterGender: String, Decodable {
     case Female
     case Male
     case Genderless

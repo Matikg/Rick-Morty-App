@@ -10,6 +10,8 @@ import Foundation
 class ApiService {
     private let baseURL = "https://rickandmortyapi.com/api"
     
+    
+    
     func fetchCharacters() async throws -> CharacterResponse {
         do {
             guard let url = URL(string: "\(baseURL)/character") else { throw ApiError.invalidURL }

@@ -9,6 +9,7 @@ import Foundation
 
 @MainActor
 class ContentModel: ObservableObject {
+    
     private var service = ApiService()
     @Published var characters = [Character]()
     
