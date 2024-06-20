@@ -24,7 +24,7 @@ struct Character: Decodable, Identifiable {
 
 struct CharacterResponse: Decodable {
     var info: CharacterInfo?
-    var results: [Character]?
+    var results = [Character]()
 }
 
 struct CharacterInfo: Decodable {

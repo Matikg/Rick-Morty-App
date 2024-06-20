@@ -19,7 +19,7 @@ struct Episode: Decodable, Identifiable {
 
 struct EpisodeResponse: Decodable {
     var info: EpisodeInfo?
-    var results: [Episode]?
+    var results = [Episode]()
 }
 
 struct EpisodeInfo: Decodable {

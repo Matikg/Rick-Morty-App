@@ -19,7 +19,7 @@ struct Location: Decodable, Identifiable {
 
 struct LocationResponse: Decodable {
     var info: LocationInfo?
-    var results: [Location]?
+    var results = [Location]()
 }
 
 struct LocationInfo: Decodable {
