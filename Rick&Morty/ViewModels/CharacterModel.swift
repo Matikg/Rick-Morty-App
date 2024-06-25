@@ -8,14 +8,13 @@
 import Foundation
 
 @MainActor
-class ContentModel: ObservableObject {
+class CharacterModel: ObservableObject {
     
-    private var service = ApiService()
     @Published var characters = [Character]()
     
     func getCharacters() async {
         do {
-            let characterResponse = try await service.fetchCharacters()
+            let characterResponse = try await ApiService.shared.fetchCharacters()
             self.characters.append(contentsOf: characterResponse.results)
         }
         catch {
@@ -25,9 +24,9 @@ class ContentModel: ObservableObject {
     
     func handleRefresh() async {
         do {
-            characters.removeAll()
-            service.page = 0
-            self.characters = try await service.fetchCharacters().results
+            self.characters.removeAll()
+            ApiService.shared.page = 0
+            self.characters = try await ApiService.shared.fetchCharacters().results
         }
         catch {
             print(error)

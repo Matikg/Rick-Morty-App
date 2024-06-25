@@ -8,11 +8,20 @@
 import SwiftUI
 
 struct LocationListView: View {
+    
+    @EnvironmentObject var model: LocationModel
+    
     var body: some View {
-        Text("Locations")
+        List(model.locations) { location in
+            Text(location.name ?? "")
+        }
+        .task {
+            await model.getLocations()
+        }
     }
 }
 
 #Preview {
     LocationListView()
+        .environmentObject(LocationModel())
 }

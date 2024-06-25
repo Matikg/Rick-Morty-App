@@ -40,5 +40,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
-        .environmentObject(ContentModel())
+        .environmentObject(CharacterModel())
 }

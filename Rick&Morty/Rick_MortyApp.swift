@@ -12,7 +12,8 @@ struct Rick_MortyApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .environmentObject(ContentModel())
+                .environmentObject(CharacterModel())
+                .environmentObject(LocationModel())
         }
     }
 }

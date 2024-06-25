@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CharacterListView: View {
     
-    @EnvironmentObject var model: ContentModel
+    @EnvironmentObject var model: CharacterModel
     
     var body: some View {
         
@@ -52,5 +52,5 @@ struct CharacterListView: View {
 
 #Preview {
     CharacterListView()
-        .environmentObject(ContentModel())
+        .environmentObject(CharacterModel())
 }
