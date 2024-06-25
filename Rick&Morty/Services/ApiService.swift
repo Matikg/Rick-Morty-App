@@ -11,7 +11,6 @@ class ApiService {
     private let baseURL = "https://rickandmortyapi.com/api"
     var page = 0
     
-    
     func fetchCharacters() async throws -> CharacterResponse {
         do {
             if page < 42 {
@@ -30,22 +29,4 @@ class ApiService {
     }
 }
 
-enum ApiError: Error, LocalizedError {
-    case invalidURL
-    case serverError
-    case invalidData
-    case unknown(Error)
-    
-    var errorDescription: String? {
-        switch self {
-        case .invalidURL:
-            return "The URL was invalid"
-        case .serverError:
-            return "There was an error with the server"
-        case .invalidData:
-            return "The data is invalid"
-        case .unknown(let error):
-            return error.localizedDescription
-        }
-    }
-}
+

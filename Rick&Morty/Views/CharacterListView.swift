@@ -14,19 +14,30 @@ struct CharacterListView: View {
     var body: some View {
         
         NavigationStack {
+            
             ScrollView(showsIndicators: false) {
+                
                 LazyVStack(alignment: .leading) {
+                    
                     ForEach(model.characters) { character in
-                        CharacterRowView(character: character)
-                            .task {
-                                if character.id == model.characters.last?.id {
-                                    await model.getCharacters()
+                        
+                        NavigationLink {
+                            CharacterDetailView(character: character)
+                                
+                        } label: {
+                            CharacterRowView(character: character)
+                                .task {
+                                    if character.id == model.characters.last?.id {
+                                        await model.getCharacters()
+                                    }
                                 }
-                            }
+                        }
+                        
                         Divider()
                     }
                 }
                 .padding()
+                .foregroundStyle(.primary)
             }
             .navigationTitle("Characters")
             .refreshable {

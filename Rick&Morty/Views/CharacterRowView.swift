@@ -22,6 +22,7 @@ struct CharacterRowView: View {
             return .gray
         }
     }
+    
     var body: some View {
         HStack {
             AsyncImage(url: URL(string: character.image ?? "")) { image in
@@ -36,7 +37,6 @@ struct CharacterRowView: View {
             .shadow(radius: 10)
             
             VStack(alignment: .leading) {
-                Text(String(character.id))
                 Text(character.name ?? "")
                     .bold()
                     .font(.title2)
@@ -50,10 +50,11 @@ struct CharacterRowView: View {
                 }
             }
             .padding(.horizontal)
+            .lineLimit(1)
         }
     }
 }
 
-//#Preview {
-//    CharacterRowView()
-//}
+#Preview {
+    CharacterRowView(character: Character.mock)
+}

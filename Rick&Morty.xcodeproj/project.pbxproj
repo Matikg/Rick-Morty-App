@@ -17,6 +17,11 @@
 		E88AFE0E2C23840000E93B07 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88AFE0D2C23840000E93B07 /* ApiService.swift */; };
 		E88AFE112C24142C00E93B07 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88AFE102C24142C00E93B07 /* ContentModel.swift */; };
 		E8AA17932C2482CF004D98C0 /* CharacterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA17922C2482CF004D98C0 /* CharacterRowView.swift */; };
+		E8AA17952C2567FC004D98C0 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA17942C2567FC004D98C0 /* CharacterDetailView.swift */; };
+		E8AA17972C27010A004D98C0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA17962C27010A004D98C0 /* HomeView.swift */; };
+		E8AA17992C2702CD004D98C0 /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA17982C2702CD004D98C0 /* LocationListView.swift */; };
+		E8AA179B2C2702E7004D98C0 /* EpisodeListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA179A2C2702E7004D98C0 /* EpisodeListView.swift */; };
+		E8AA179D2C2A9FAA004D98C0 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AA179C2C2A9FAA004D98C0 /* ApiError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 		E88AFE0D2C23840000E93B07 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		E88AFE102C24142C00E93B07 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 		E8AA17922C2482CF004D98C0 /* CharacterRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRowView.swift; sourceTree = "<group>"; };
+		E8AA17942C2567FC004D98C0 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		E8AA17962C27010A004D98C0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E8AA17982C2702CD004D98C0 /* LocationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
+		E8AA179A2C2702E7004D98C0 /* EpisodeListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeListView.swift; sourceTree = "<group>"; };
+		E8AA179C2C2A9FAA004D98C0 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				E88AFE0D2C23840000E93B07 /* ApiService.swift */,
+				E8AA179C2C2A9FAA004D98C0 /* ApiError.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -113,6 +124,10 @@
 			children = (
 				E83EFF832C22D0910060D61F /* CharacterListView.swift */,
 				E8AA17922C2482CF004D98C0 /* CharacterRowView.swift */,
+				E8AA17942C2567FC004D98C0 /* CharacterDetailView.swift */,
+				E8AA17962C27010A004D98C0 /* HomeView.swift */,
+				E8AA17982C2702CD004D98C0 /* LocationListView.swift */,
+				E8AA179A2C2702E7004D98C0 /* EpisodeListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -187,13 +202,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8AA17972C27010A004D98C0 /* HomeView.swift in Sources */,
+				E8AA17952C2567FC004D98C0 /* CharacterDetailView.swift in Sources */,
 				E88AFE072C23788C00E93B07 /* Character.swift in Sources */,
 				E8AA17932C2482CF004D98C0 /* CharacterRowView.swift in Sources */,
 				E83EFF842C22D0910060D61F /* CharacterListView.swift in Sources */,
 				E88AFE0E2C23840000E93B07 /* ApiService.swift in Sources */,
 				E88AFE092C237ABF00E93B07 /* Location.swift in Sources */,
+				E8AA17992C2702CD004D98C0 /* LocationListView.swift in Sources */,
+				E8AA179B2C2702E7004D98C0 /* EpisodeListView.swift in Sources */,
 				E88AFE0B2C237B8200E93B07 /* Episode.swift in Sources */,
 				E88AFE112C24142C00E93B07 /* ContentModel.swift in Sources */,
+				E8AA179D2C2A9FAA004D98C0 /* ApiError.swift in Sources */,
 				E83EFF822C22D0910060D61F /* Rick_MortyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
