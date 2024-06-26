@@ -23,7 +23,7 @@ struct CharacterListView: View {
                         
                         NavigationLink {
                             CharacterDetailView(character: character)
-                                
+                            
                         } label: {
                             CharacterRowView(character: character)
                                 .task {
@@ -47,6 +47,9 @@ struct CharacterListView: View {
         .task {
             await model.getCharacters()
         }
+        .alert(isPresented: $model.showError, content: {
+            return Alert(title: Text("Error!"), message: Text(model.errorMessage ?? ""))
+        })
     }
 }
 
